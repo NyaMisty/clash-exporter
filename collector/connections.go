@@ -94,6 +94,7 @@ func (c *Connection) Collect(config CollectConfig) error {
 			if destination == "" {
 				destination = connection.Metadata.DestinationIP
 			}
+			destination = destination + ":" + connection.Metadata.DestinationPort
 			if !config.CollectDest {
 				destination = ""
 			}
